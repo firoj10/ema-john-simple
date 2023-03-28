@@ -5,6 +5,7 @@ import './Card.css'
 const Card = ({cart}) => {
     // const {cart}= props;
     // const cart= props.cart;
+console.log(cart)
     let totalPrice = 0;
     let totalShipping = 0;
     for (const product of cart){
