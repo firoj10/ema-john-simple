@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import Product from '../Product/Product';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Orders.css'
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 
 const Orders = () => {
     const savedCart = useLoaderData();
@@ -14,6 +14,10 @@ const Orders = () => {
       const remanningCart = cart.filter(product=> product.id !==id)
       setCart(remanningCart);
       removeFromDb(id)
+    }
+    const handleClearCart = ()=>{
+        setCart([])
+        deleteShoppingCart()
     }
     console.log(savedCart);
     return (
@@ -29,7 +33,9 @@ const Orders = () => {
   
        </div>
         <div className='card-container'>
-   <Card cart={cart}></Card>
+   <Card cart={cart}
+   handleClearCart={handleClearCart}
+   ></Card>
        </div>
    </div>
     );
