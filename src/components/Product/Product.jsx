@@ -9,15 +9,15 @@ const Product = (props) => {
     const handleAddToCart = props.handleAddToCart;
     return (
         <div className='product'>
-           <img src={img} alt="" />
-     
+           <img src={img} alt=""/>
           <div className='product-info'>
           <h6 className='product-name'>{name}</h6>
            <p>Price:{seller}</p>
            <p>Manufacturer:{ratings}</p>
            <p>Ratining:{price} Stars</p>
           </div>
-          <button onClick={()=>handleAddToCart(props.product)} className='btn-cart'>add to card
+          <button onClick={()=>handleAddToCart(props.product)}
+           className='btn-cart'>add to card
           <FontAwesomeIcon icon={faShoppingCart}/>
           </button>
         </div>
