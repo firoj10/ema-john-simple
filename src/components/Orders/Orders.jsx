@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Card from '../Card/Card';
 import Product from '../Product/Product';
 import ReviewItem from '../ReviewItem/ReviewItem';
@@ -35,7 +35,11 @@ const Orders = () => {
         <div className='card-container'>
    <Card cart={cart}
    handleClearCart={handleClearCart}
-   ></Card>
+   >
+   <Link to={'/checkout'}>
+   <button>Prosid checkout</button>
+   </Link>
+   </Card>
        </div>
    </div>
     );
